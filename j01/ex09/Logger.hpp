@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/16 22:26:34 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/16 22:39:28 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/17 00:51:19 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,6 +16,7 @@
 ** defines
 */
 # define LOGGER_HPP
+# define LOG_FILE "ireallyhopethisisnotloggerdotcpp.log"
 
 /*
 ** enum
@@ -26,6 +27,8 @@ enum zboub { TO_CONSOLE, TO_FILE };
 ** includes
 */
 # include <iostream>
+# include <fstream>
+# include <ctime>
 
 /*
 ** class
@@ -33,22 +36,22 @@ enum zboub { TO_CONSOLE, TO_FILE };
 class Logger
 {
 	public:
-		Logger(std::string const &file = "NoFileSpecified");
+		Logger(std::string const &fileName = "NoFileSpecified");
 		~Logger(void);
-        void            log(std::string const &dest,
-                            std::string const &message) const;
+		void			log(std::string const &dest,
+						std::string const &message) const;
 
 	private:
-		void            logToConsole(std::string const &log) const;
-		void        	logToFile(std::string const &log) const;
+		void			logToConsole(std::string const &log) const;
+		void			logToFile(std::string const &log) const;
 		std::string		makeLogEntry(std::string const &log) const;
 
-		std::string     _file;
+		std::string		_fileName;
 };
 
 /*
 ** typedef
 */
-typedef void    (Logger::*FunctionPointer)(std::string const &log);
+typedef void		(Logger::*FunctionPointer)(std::string const &log) const;
 
 #endif //LOGGER_HPP

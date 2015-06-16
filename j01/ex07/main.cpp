@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/16 17:39:46 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/16 19:20:59 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/17 00:28:05 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -31,7 +31,6 @@ static bool	 replace(std::string fn,
 		std::cerr << "Error: could not open file." << std::endl;
 		return false;
 	}
-
     
 	size_t			i;
 	while (getline(rStream, fn))    

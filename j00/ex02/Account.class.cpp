@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/15 12:55:11 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/16 16:58:53 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/17 00:26:32 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -82,10 +82,9 @@ int			Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
 void		Account::_displayTimestamp(void)
 {
 	time_t      theTime = time(NULL);
-	struct tm   *aTime = localtime(&theTime);
     char        s[32];
 
-    strftime(s, sizeof(s), "[%Y%d%m_%H%M%S] ", aTime);
+    strftime(s, sizeof(s), "[%Y%d%m_%H%M%S] ", localtime(&theTime));
     std::cout << s;
 }
 

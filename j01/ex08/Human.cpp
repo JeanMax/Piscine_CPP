@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/16 19:27:33 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/16 21:32:14 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/16 23:58:43 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -42,5 +42,5 @@ void		 Human::action(std::string const &action_name,
 		&Human::intimidatingShout
 	};
 
-    (this->*f[static_cast<int>(action_name.c_str()[0])])(target);
+    (this->*f[static_cast<int>(*(action_name.c_str()))])(target);
 }
