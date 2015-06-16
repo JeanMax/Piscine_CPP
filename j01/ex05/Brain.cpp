@@ -3,10 +3,10 @@
 //                                                        :::      ::::::::   //
 //   Brain.cpp                                          :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/09 03:27:18 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/09 04:03:13 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 13:33:16 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 14:38:59 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,6 +24,9 @@ Brain::~Brain(void)
 
 std::string		Brain::identify(void)	const
 {
-	std::cout << this;
-	return (char *)this;
+	std::stringstream	address;
+
+    address << this;
+
+	return address.str();
 }

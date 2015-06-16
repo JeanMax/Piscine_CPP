@@ -3,10 +3,10 @@
 //                                                        :::      ::::::::   //
 //   Pony.hpp                                           :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/07 21:18:55 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/07 22:37:42 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 11:30:39 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 11:34:11 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -30,7 +30,7 @@ class Pony
 	public:
 		Pony(std::string const &name);
 		~Pony(void);
-		void	hello(void) const;
+		void	doStuff(void) const;
 
 	private:
 		std::string		_name;

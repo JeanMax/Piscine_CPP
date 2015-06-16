@@ -3,10 +3,10 @@
 //                                                        :::      ::::::::   //
 //   main.cpp                                           :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/08 22:12:45 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/08 22:30:49 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 12:43:47 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 13:17:43 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,7 +14,8 @@
 
 int				main(void)
 {
-	ZombieHorde *zh = new ZombieHorde(10);
+	ZombieHorde *zh = new ZombieHorde(7);
+    zh->announce();
 	delete zh;
 
 	return (0);

@@ -3,10 +3,10 @@
 //                                                        :::      ::::::::   //
 //   Zombie.hpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/08 03:42:49 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/09 03:31:27 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 12:42:57 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 13:17:26 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -28,17 +28,16 @@
 class Zombie
 {
 	public:
-		Zombie(std::string	const &name,// = "Nameless Zombie",
-			   std::string	const &type,// = "Typeless Zombie",
-			   Zombie		*prev);
+		Zombie(std::string	const &name = "NamelessZombie",
+				std::string	const &type = "TypelessZombie");
 		~Zombie(void);
 		void	announce(void) const;
-		Zombie	*getPrev(void) const;
+		void	setName(std::string const &name);
+		void	setType(std::string const &type);
 
 	private:
 		std::string		_name;
 		std::string		_type;
-		Zombie			*_prev;
 };
 
 #endif //ZOMBIE_HPP

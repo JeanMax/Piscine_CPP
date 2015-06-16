@@ -6,13 +6,13 @@
 #    By: mcanal <zboub@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/03 17:48:18 by mcanal            #+#    #+#              #
-#    Updated: 2015/06/16 17:39:18 by mcanal           ###   ########.fr        #
+#    Updated: 2015/06/16 17:40:15 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME =	zboub
-C_SRC =	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-INC =	HumanA.hpp HumanB.hpp Weapon.hpp
+NAME =	replace
+C_SRC =	main.cpp
+INC =	
 I_DIR = -I.
 O_DIR =	obj
 VPATH =	.

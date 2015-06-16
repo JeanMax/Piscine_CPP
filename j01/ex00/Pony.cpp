@@ -3,10 +3,10 @@
 //                                                        :::      ::::::::   //
 //   Pony.cpp                                           :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/07 21:18:45 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/08 02:16:06 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 11:30:49 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 11:35:06 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -22,7 +22,7 @@ Pony::~Pony(void)
 	std::cout << this->_name << " destructed." << std::endl;
 }
 
-void	Pony::hello(void)	const
+void	Pony::doStuff(void)	const
 {
-	std::cout << "Greetings " << this->_name << "!" << std::endl;
+	std::cout << this->_name << " did some stuff." << std::endl;
 }

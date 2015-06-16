@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/15 12:55:11 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/16 09:54:51 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/16 16:58:53 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -85,7 +85,7 @@ void		Account::_displayTimestamp(void)
 	struct tm   *aTime = localtime(&theTime);
     char        s[32];
 
-    strftime (s, sizeof(s), "[%Y%d%m_%H%M%S] ", aTime);
+    strftime(s, sizeof(s), "[%Y%d%m_%H%M%S] ", aTime);
     std::cout << s;
 }
 

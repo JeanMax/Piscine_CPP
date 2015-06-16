@@ -3,10 +3,10 @@
 //                                                        :::      ::::::::   //
 //   ZombieEvent.cpp                                    :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/07 22:35:47 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/08 22:26:57 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 12:07:09 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 12:29:33 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,7 +24,7 @@ ZombieEvent::~ZombieEvent(void)
 
 Zombie			*ZombieEvent::newZombie(std::string const &name)	const
 {
-	return new Zombie(name);
+	return new Zombie(name, this->_type);
 }
 
 void			ZombieEvent::setZombieType(std::string const &type)

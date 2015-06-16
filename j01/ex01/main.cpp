@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/16 10:03:44 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/16 10:05:32 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/16 11:39:09 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,5 +15,9 @@ void		memoryLeak(void);
 int		main(void)
 {
 	memoryLeak();
+
+    while (true)
+        ;
+    
 	return (0);
 }

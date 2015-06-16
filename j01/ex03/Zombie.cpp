@@ -3,35 +3,43 @@
 //                                                        :::      ::::::::   //
 //   Zombie.cpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/08 03:42:29 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/09 03:25:58 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/16 12:43:22 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/16 14:58:19 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string	const &name,
-			   std::string	const &type,
-			   Zombie		*prev) :			\
-	_name(name), _type(type), _prev(prev)
+/*
+** Constructor
+*/
+Zombie::Zombie(std::string const &name, std::string const &type) : \
+	_name(name), _type(type)
 {
-	std::cout << this->_name << " constructed." << std::endl;
+	std::cout << "Zombie " << this->_name << " constructed." << std::endl;
 }
 
+/*
+** Destructor
+*/
 Zombie::~Zombie(void)
 {
-	std::cout << this->_name << " destructed." << std::endl;
+	std::cout << "Zombie " << this->_name << " destructed." << std::endl;
 }
 
-void	 Zombie::announce(void)	const
+/*
+** public
+*/
+void        Zombie::announce(void)	const
 {
 	std::cout << "<" << this->_name \
 				<< " (" << this->_type << ")> Braiiiiiiinnnssss..." << std::endl;
 }
 
-Zombie	*Zombie::getPrev(void) const
-{
-	return this->_prev;
-}
+/*
+** get/set
+*/
+void        Zombie::setName(std::string const &name) { this->_name = name; }
+void        Zombie::setType(std::string const &type) { this->_type = type; }
