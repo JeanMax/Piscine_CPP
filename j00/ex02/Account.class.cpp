@@ -6,14 +6,13 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/15 12:55:11 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/15 16:50:21 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/16 09:54:51 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Account.class.hpp"
 #include <iostream> //cout
-#include <time.h> //time
-#include <iomanip> //put_time
+#include <ctime> //time
 
 /*
 ** init

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+         #
+#    By: mcanal <zboub@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/06/15 11:32:08 by mcanal            #+#    #+#              #
-#    Updated: 2015/06/16 10:02:29 by mcanal           ###   ########.fr        #
+#    Created: 2015/06/03 17:48:18 by mcanal            #+#    #+#              #
+#    Updated: 2015/06/16 10:00:59 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME =	job
-C_SRC =	tests.cpp Account.class.cpp
-INC =	Account.class.hpp
+NAME =	zombie
+C_SRC =	main.cpp Zombie.cpp ZombieEvent.cpp
+INC =	Zombie.hpp ZombieEvent.hpp
 I_DIR = -I.
 O_DIR =	obj
 VPATH =	.
