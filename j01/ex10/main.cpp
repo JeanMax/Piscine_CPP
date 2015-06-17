@@ -6,14 +6,14 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 01:16:25 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/17 01:39:29 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/17 01:46:23 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include <iostream>
 #include <fstream>
 
-static void		output_file(std::string fileName)
+static void		output_file(std::string const &fileName)
 {
 	std::fstream file(fileName.c_str());
 
