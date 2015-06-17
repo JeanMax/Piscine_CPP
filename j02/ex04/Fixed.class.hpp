@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 12:02:35 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/17 15:40:09 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/17 20:55:54 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -69,6 +69,7 @@ class Fixed
 	private:
 		int					_fixedPointValue; //TODO: find a pretty name
 		static int const	_fractionnalBitsNb; //TODO: find a pretty name
+        int                 power(int ex) const;
 };
 
 /*

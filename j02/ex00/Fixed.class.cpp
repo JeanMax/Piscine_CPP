@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 11:59:43 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/17 14:17:30 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/17 19:32:05 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -45,7 +45,7 @@ int				Fixed::getRawBits(void)	const
 void			Fixed::setRawBits(int const raw)
 {
 	this->_fixedPointValue = static_cast<int>(
-		raw * pow(2, Fixed::_fractionnalBitsNb) );
+        roundf(static_cast<float>(raw << Fixed::_fractionnalBitsNb)));
 }
 
 /*
