@@ -6,11 +6,11 @@
 #    By: mcanal <zboub@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/03 17:48:18 by mcanal            #+#    #+#              #
-#    Updated: 2015/06/17 12:28:50 by mcanal           ###   ########.fr        #
+#    Updated: 2015/06/18 21:43:59 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME =	fixed
+NAME =	eval_expr
 C_SRC =	main.cpp Fixed.class.cpp
 INC =	Fixed.class.hpp
 I_DIR = -I.

@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 11:59:43 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/17 21:07:37 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/18 23:28:05 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,6 +24,7 @@ Fixed::Fixed(void) : _fixedPointValue(0)
 
 Fixed::Fixed(Fixed const &toCopy) : _fixedPointValue(toCopy._fixedPointValue)
 {
+
 }
 
 Fixed::Fixed(const int fixedPointValue)
@@ -61,7 +62,7 @@ void				Fixed::setRawBits(int const raw)
 void				Fixed::setRawBits(float const raw)
 {
 	this->_fixedPointValue = static_cast<int>(
-		roundf(raw * power(Fixed::_fractionnalBitsNb)) );
+		roundf(raw * (1 << Fixed::_fractionnalBitsNb)) );
 }
 
 /*
@@ -100,7 +101,7 @@ Fixed				Fixed::operator*(Fixed const &rhs)	const
 {
 	Fixed result;
 
-	result._fixedPointValue = this->_fixedPointValue * rhs._fixedPointValue;
+	result._fixedPointValue = this->_fixedPointValue * rhs._fixedPointValue / (1 << Fixed::_fractionnalBitsNb);
 	return result;
 }
 
@@ -108,8 +109,14 @@ Fixed				Fixed::operator/(Fixed const &rhs)	const
 {
 	Fixed result;
 
+    if (!rhs._fixedPointValue)
+        exit(0);
+    
     result._fixedPointValue = rhs._fixedPointValue ?
-        this->_fixedPointValue / rhs._fixedPointValue : 0;
+        static_cast<int>(
+        static_cast<float>(this->_fixedPointValue) /
+        static_cast<float>(rhs._fixedPointValue) *
+        static_cast<float>(1 << Fixed::_fractionnalBitsNb) ) : 0;
 
 	return result;
 }
@@ -201,23 +208,10 @@ Fixed const			&Fixed::max(Fixed const &fix1, const Fixed &fix2)
 float				Fixed::toFloat(void) const
 {
 	return static_cast<float>(this->_fixedPointValue) /
-		static_cast<float>(power(Fixed::_fractionnalBitsNb));
+		static_cast<float>(1 << Fixed::_fractionnalBitsNb);
 }
 
 int					Fixed::toInt(void) const
 {
-	return this->_fixedPointValue / power(Fixed::_fractionnalBitsNb);
-}
-
-/*
-** private
-*/
-int				 Fixed::power(int ex) const
-{
-	int	result = 2;
-
-	while (--ex > 0)
-		result *= 2;
-
-	return result;
+	return this->_fixedPointValue / (1 << Fixed::_fractionnalBitsNb);
 }
