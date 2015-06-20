@@ -1,43 +1,43 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Peon.cpp                                           :+:      :+:    :+:   //
+//   Smurf.cpp                                           :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:49:09 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/20 17:10:14 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 22:31:53 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Peon.hpp"
+#include "Smurf.hpp"
 
 /*
 ** constructor
 */
-Peon::Peon(std::string name) : Victim(name)
+Smurf::Smurf(std::string name) : Victim(name)
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "Smurf on" << std::endl;
 }
 
-Peon::Peon(Peon const &copy) : Victim(copy)
+Smurf::Smurf(Smurf const &copy) : Victim(copy)
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "Smurf on" << std::endl;
 }
 
 /*
 ** destructor
 */
-Peon::~Peon(void)
+Smurf::~Smurf(void)
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << "Smurf off" << std::endl;
 }
 
 /*
 ** public
 */
-void					Peon::getPolymorphed(void) const
+void					Smurf::getPolymorphed(void) const
 {
 	std::cout << this->_name
-				<< " has been turned into a pink pony !" << std::endl;
+				<< " has been turned into something else !" << std::endl;
 }

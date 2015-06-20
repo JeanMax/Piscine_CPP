@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:48:35 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 13:38:47 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 16:52:54 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,7 +17,7 @@
 */
 Sorcerer::Sorcerer(void)
 {
-	//TODO: wtf?
+    throw std::invalid_argument("Sorcerer can't be instanciated without parameters (That wouldn’t make any sense ! Imagine a sorcerer with no name, or no title... Poor guy, he couldn’t boast to the wenches at the tavern ...).");
 }
 
 Sorcerer::Sorcerer(std::string name, std::string title) : _name(name),
@@ -29,7 +29,7 @@ Sorcerer::Sorcerer(std::string name, std::string title) : _name(name),
 
 Sorcerer::Sorcerer(Sorcerer const &copy)
 {
-	*this = copy; //TODO: test
+	*this = copy;
 
 	std::cout << this->_name << ", "
 				<< this->_title << ", is born !" << std::endl;

@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:50:16 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 14:17:47 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 19:50:42 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -28,7 +28,6 @@
 class Sorcerer
 {
 	public:
-		Sorcerer(void); //TODO: wtf?
 		Sorcerer(std::string name, std::string title);
 		Sorcerer(Sorcerer const &copy);
 		~Sorcerer(void);
@@ -40,6 +39,7 @@ class Sorcerer
 		Sorcerer		&operator=(Sorcerer const &copy);
 
 	protected:
+		Sorcerer(void);
 		std::string		_name;
 		std::string		_title;
 };

@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:16:42 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/20 13:38:52 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 22:05:52 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,13 +15,14 @@
 /*
 ** constructor
 */
-Squad::Squad(void) :  _squad(0), _count(0)
+Squad::Squad(void) : _squad(0), _count(0)
 {
 	this->_squad = new ISpaceMarine*[SQUAD_SIZE]; //><
 }
 
-Squad::Squad(Squad const &copy)
+Squad::Squad(Squad const &copy) : _squad(0), _count(0)
 {
+	this->_squad = new ISpaceMarine*[SQUAD_SIZE]; //><
 	*this = copy;
 }
 
@@ -40,24 +41,14 @@ Squad::~Squad(void)
 */
 Squad					&Squad::operator=(Squad const &copy)
 {
-	int i;
+    for (int i = 0; i < this->_count; i++)
+        delete this->_squad[i];
 
-	for (i = 0; i < copy._count; i++)
-	{
-		if (this->_squad[i])
-			delete this->_squad[i];
-		this->_squad[i] = copy._squad[i];
-	}
+    for (int i = 0; i < copy._count; i++)
+        this->_squad[i] = copy._squad[i]->clone();
 
-	for (; i < this->_count; i++)
-	{
-		if (this->_squad[i])
-			delete this->_squad[i];
-		this->_squad[i] = NULL;
-	}
-
-	this->_count = copy._count;
-
+    this->_count = copy._count;
+    
 	return *this;
 }
 
@@ -77,10 +68,10 @@ ISpaceMarine			*Squad::getUnit(int n)
 int						Squad::push(ISpaceMarine *unit)
 {
 	for (int i = 0; i < this->_count; i++)
-		if (unit == this->_squad[i] || this->_count == SQUAD_SIZE) //TODO: test
+		if (unit == this->_squad[i] || this->_count == SQUAD_SIZE)
 		{
 			unit = NULL;
-			break;
+			break ;
 		}
 
 	if (unit != NULL)
@@ -88,4 +79,3 @@ int						Squad::push(ISpaceMarine *unit)
 
 	return this->_count;
 }
-

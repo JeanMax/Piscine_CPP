@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:49:21 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 13:44:59 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 17:10:05 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -28,8 +28,7 @@
 class Peon : public Victim
 {
 	public:
-		Peon(void); //TODO: wtf?
-		Peon(std::string name);
+		Peon(std::string name = "bob");
 		Peon(Peon const &copy);
 		~Peon(void);
 

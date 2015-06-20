@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:17:22 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/20 13:51:24 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 22:08:14 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,7 +20,7 @@ TacticalMarine::TacticalMarine(void)
 	std::cout << "Tactical Marine ready for battle" << std::endl;
 }
 
-TacticalMarine::TacticalMarine(TacticalMarine const &copy)
+TacticalMarine::TacticalMarine(TacticalMarine const &copy) : ISpaceMarine(copy)
 {
 	*this = copy;
 	std::cout << "Tactical Marine ready for battle" << std::endl;
@@ -39,7 +39,7 @@ TacticalMarine::~TacticalMarine(void)
 */
 TacticalMarine			&TacticalMarine::operator=(TacticalMarine const &copy)
 {
-	delete copy.clone(); //YAY!
+    ISpaceMarine::operator=(copy);
 
 	return *this;
 }
@@ -49,7 +49,7 @@ TacticalMarine			&TacticalMarine::operator=(TacticalMarine const &copy)
 */
 TacticalMarine			*TacticalMarine::clone(void) const
 {
-	return new TacticalMarine(*this);
+	return new TacticalMarine();
 }
 
 void					TacticalMarine::battleCry(void) const

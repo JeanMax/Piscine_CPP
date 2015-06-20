@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:49:43 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 14:18:06 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 17:07:28 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -28,8 +28,7 @@
 class Victim
 {
 	public:
-		Victim(void); //TODO: wtf?
-		Victim(std::string name);
+		Victim(std::string name = "bob");
 		Victim(Victim const &copy);
 		~Victim(void);
 

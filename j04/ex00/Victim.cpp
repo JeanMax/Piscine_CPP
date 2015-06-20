@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:48:57 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 13:38:54 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 17:12:22 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,11 +15,6 @@
 /*
 ** constructor
 */
-Victim::Victim(void)
-{
-	//TODO: wtf?
-}
-
 Victim::Victim(std::string name) : _name(name)
 {
 	std::cout << "Some random victim called " << this->_name
@@ -28,7 +23,7 @@ Victim::Victim(std::string name) : _name(name)
 
 Victim::Victim(Victim const &copy)
 {
-	*this = copy; //TODO: test
+	*this = copy;
 
 	std::cout << "Some random victim called " << this->_name
 				<< " just popped !" << std::endl;
