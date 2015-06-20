@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 11:59:43 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/17 20:54:51 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/18 19:20:28 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -65,7 +65,7 @@ void			Fixed::setRawBits(int const raw)
 void			Fixed::setRawBits(float const raw)
 {
     this->_fixedPointValue = static_cast<int>(
-        roundf(raw * power(Fixed::_fractionnalBitsNb)) );
+        roundf(raw * (1 << Fixed::_fractionnalBitsNb)) );
 }
 
 /*
@@ -91,23 +91,10 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &copy)
 float			 Fixed::toFloat(void) const
 {
 	return static_cast<float>(this->_fixedPointValue) /
-        static_cast<float>(power(Fixed::_fractionnalBitsNb));
+        static_cast<float>(1 << Fixed::_fractionnalBitsNb);
 }
 
 int				 Fixed::toInt(void) const
 {
-	return this->_fixedPointValue / power(Fixed::_fractionnalBitsNb);
-}
-
-/*
-** private
-*/
-int                 Fixed::power(int ex) const
-{
-    int result = 2;
-
-    while (--ex > 0)
-        result *= 2;
-
-    return result;
+	return this->_fixedPointValue / (1 << Fixed::_fractionnalBitsNb);
 }

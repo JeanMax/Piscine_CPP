@@ -1,0 +1,93 @@
+// ************************************************************************** //
+//                                                                            //
+//                                                        :::      ::::::::   //
+//   main.cpp                                           :+:      :+:    :+:   //
+//                                                    +:+ +:+         +:+     //
+//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//                                                +#+#+#+#+#+   +#+           //
+//   Created: 2015/06/17 11:57:49 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/18 21:29:23 by mcanal           ###   ########.fr       //
+//                                                                            //
+// ************************************************************************** //
+
+#include <Fixed.class.hpp>
+#include <string>
+#include <sstream>
+
+static Fixed            stofix(std::string s)
+{
+    Fixed ret(std::stof(s.c_str()));
+
+    return ret;
+}
+
+static std::string      fixtos(Fixed f)
+{
+    std::ostringstream ss;
+
+    ss << f.toFloat();
+    return ss.str();
+}
+
+/*
+static std::string      solve_add(std::string s)
+{
+    Fixed a;
+    Fixed b;
+    
+}
+*/
+
+static std::string      removeSpaces(std::string s)
+{
+    size_t i = 0;
+    std::string search = " ";
+    std::string replace = "";
+    while ((i = s.find(search, i)) != std::string::npos)
+    {
+        s.replace(i, search.length(), replace);
+        i += replace.length();
+    }
+
+    search = "\t";
+    while ((i = s.find(search, i)) != std::string::npos)
+    {
+        s.replace(i, search.length(), replace);
+        i += replace.length();
+    }
+    
+    char const *ptr = s.c_str();
+    while (*ptr)
+    {
+        if (!isdigit(*ptr) && *ptr != '+' && *ptr != '-' && *ptr != '*' &&
+            *ptr != '/' && *ptr != '=' && *ptr != ')' && *ptr != '(' && *ptr != '.')
+        {
+            s.resize(0);
+            return s;
+        }
+        ptr++;
+    }
+      
+    return s;
+}
+
+int                     main(const int ac, char **av)
+{
+    if (ac != 2)
+    {
+        std::cout << "Error: 1 argument needed." << std::endl;
+        return (-1);
+    }
+    std::string expr = removeSpaces(*(av + 1));
+    if (!expr.size())
+    {
+        std::cout << "Error: Syntax." << std::endl;
+        return (-2);    
+    }
+
+    //std::cout << solve_add(expr) << std::endl;
+        
+    std::cout << expr << std::endl;  //debug
+
+	return (0);
+}
