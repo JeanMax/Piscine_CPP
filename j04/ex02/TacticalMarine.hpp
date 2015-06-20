@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:17:08 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/18 00:17:15 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 13:39:09 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,16 +20,23 @@
 /*
 ** includes
 */
-//# include <iostream>
+# include "ISpaceMarine.hpp"
 
 /*
 ** class
 */
-class TacticalMarine
+class TacticalMarine : public ISpaceMarine
 {
 	public:
 		TacticalMarine(void);
+		TacticalMarine(TacticalMarine const &copy);
 		~TacticalMarine(void);
+
+		TacticalMarine		&operator=(TacticalMarine const &copy);
+		TacticalMarine		*clone(void) const;
+		void				battleCry(void) const;
+		void				rangedAttack(void) const;
+		void				meleeAttack(void) const;
 
 	private:
 

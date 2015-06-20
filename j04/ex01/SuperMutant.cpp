@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:05:38 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 16:04:32 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 01:40:42 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -48,10 +48,5 @@ SuperMutant	 &SuperMutant::operator=(SuperMutant const &copy)
 */
 void				SuperMutant::takeDamage(int damage)
 {
-/*
-	damage -= 3;
-	if (damage > 0)
-		this->_hp = this->_hp - damage > 0 ? this->_hp - damage : 0;
-*/
-	Enemy::takeDamage(damage - 3); //TODO: test
+	Enemy::takeDamage(damage - 3);
 }

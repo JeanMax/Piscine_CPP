@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:13:18 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/18 00:14:10 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 12:53:13 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -20,7 +20,7 @@
 /*
 ** includes
 */
-//# include <iostream>
+# include "ISpaceMarine.hpp"
 
 /*
 ** class
@@ -28,10 +28,11 @@
 class ISquad
 {
 	public:
-		virtual		~ISquad() {}
-		virtual		int		 getCount() const = 0;
-		virtual		ISpaceMarine* getUnit(int) = 0;
-		virtual		int		 push(ISpaceMarine*) = 0;
+		virtual ~ISquad(void) {};
+
+		virtual int				getCount(void) const = 0;
+		virtual ISpaceMarine	*getUnit(int n) = 0;
+		virtual int				push(ISpaceMarine *unit) = 0;
 
 };
 

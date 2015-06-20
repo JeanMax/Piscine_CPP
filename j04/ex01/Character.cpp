@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:08:00 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 16:26:45 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 01:47:45 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,14 +17,14 @@
 */
 Character::Character(void)
 {
-
+//	std::cout << *this;
 }
 
 Character::Character(std::string const &name) : _name(name), 
 												_ap(40), 
 												_weapon(NULL)
 {
-
+//	std::cout << *this;
 }
 
 Character::Character(Character const &copy)
@@ -66,7 +66,7 @@ Character				&Character::operator=(Character const &copy)
 */
 void					Character::recoverAP(void)
 {
-	
+	this->_ap = this->_ap < 30 ? this->_ap + 10 : 40;
 }
 
 void					Character::equip(AWeapon *weapon)
@@ -76,7 +76,20 @@ void					Character::equip(AWeapon *weapon)
 
 void					Character::attack(Enemy *enemy)
 {
-	
+	if (this->_ap < this->_weapon->getAPCost() || !this->_weapon)
+		return ;
+
+	std::cout << this->_name << " attacks " 
+			  << enemy->getType() << " with a " 
+			  << this->_weapon->getName() << std::endl;
+
+	this->_weapon->attack();
+
+	this->_ap -= this->_weapon->getAPCost();
+
+	enemy->takeDamage(this->_weapon->getDamage());
+	if (!enemy->getHP())
+		delete enemy;
 }
 
 /*

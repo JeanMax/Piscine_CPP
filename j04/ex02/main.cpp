@@ -6,9 +6,13 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:15:37 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/18 00:15:50 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 12:23:48 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
+
+#include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
+#include "Squad.hpp"
 
 int		main(void)
 {

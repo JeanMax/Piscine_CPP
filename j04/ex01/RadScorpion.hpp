@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:06:29 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 15:54:41 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 01:40:55 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -32,7 +32,7 @@ class RadScorpion : public Enemy
 		RadScorpion(RadScorpion const &copy);
 		virtual ~RadScorpion(void);
 
-		void			takeDamage(int damage);
+		using			Enemy::takeDamage;
 		RadScorpion		&operator=(RadScorpion const &copy);
 
 	private:

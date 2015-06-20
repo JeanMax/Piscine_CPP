@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:06:17 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 16:04:48 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 01:40:49 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,7 @@
 /*
 ** constructor
 */
-RadScorpion::RadScorpion(void) : Enemy(170, "Super Mutant")
+RadScorpion::RadScorpion(void) : Enemy(80, "RadScorpion")
 {
 	std::cout << "* click click click *" << std::endl;
 }
@@ -42,14 +42,3 @@ RadScorpion	 &RadScorpion::operator=(RadScorpion const &copy)
 
 	return *this;
 }
-
-/*
-** public
-*/
-/*
-void				RadScorpion::takeDamage(int damage)
-{
-	if (damage > 0)
-		this->_hp = this->_hp - damage > 0 ? this->_hp - damage : 0;
-}
-*/

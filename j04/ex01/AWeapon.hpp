@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/18 00:00:04 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 15:06:39 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 01:48:24 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -45,7 +45,6 @@ class AWeapon
 		int					_apcost;
 		int					_damage;
 
-		//TODO: "A weapon produces certain sounds and lighting effects when you attack() with it. This will be deferred to the inheriting classes."
 };
 
 #endif //AWEAPON_HPP

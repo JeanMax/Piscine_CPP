@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/17 23:57:06 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/19 14:49:01 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/20 01:21:47 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -23,11 +23,14 @@
 int		main(void)
 {
 	Character	*zaz = new Character("zaz");
+
+	std::cout << *zaz;
+
 	Enemy		*b = new RadScorpion();
+
 	AWeapon		*pr = new PlasmaRifle();
 	AWeapon		*pf = new PowerFist();
 
-	std::cout << *zaz;
 
 	zaz->equip(pr);
 	std::cout << *zaz;
