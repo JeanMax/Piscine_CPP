@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 17:22:42 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:38:53 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -30,8 +30,8 @@ Form::Form(std::string const &name, const int signGrade, const int execGrade) :
 }
 
 Form::Form(Form const &copy) : _name(copy._name),
-							   _signGrade(copy._signGrade),
-							   _execGrade(copy._execGrade)
+								_signGrade(copy._signGrade),
+								_execGrade(copy._execGrade)
 {
 	if (DEBUG) std::cout << "Copy-constructed " << *this;
 	*this = copy;
@@ -83,7 +83,7 @@ Form::GradeTooLowException::~GradeTooLowException(void) throw()
 Form				&Form::operator=(Form const &copy)
 {
 	this->_isSigned = copy._isSigned;
-	
+
 	if (copy._execGrade < 1 || copy._signGrade < 1)
 		throw Form::GradeTooHighException();
 	else if (copy._execGrade > 150 || copy._signGrade > 150)
@@ -108,10 +108,10 @@ Form::GradeTooLowException	&Form::GradeTooLowException::operator=(GradeTooLowExc
 
 std::ostream			&operator<<(std::ostream &o, Form const &copy)
 {
-	o << copy.getName() << " form, grade to sign : " 
-	  << copy.getSignGrade() << ", grade to execute : " 
-	  << copy.getExecGrade() << ", " << (copy.getIsSigned() ? "" : "not " )
-	  << "signed." << std::endl;
+	o << copy.getName() << " form, grade to sign : "
+		<< copy.getSignGrade() << ", grade to execute : "
+		<< copy.getExecGrade() << ", " << (copy.getIsSigned() ? "" : "not " )
+		<< "signed." << std::endl;
 
 	return o;
 }
@@ -131,18 +131,21 @@ const char				*Form::GradeTooLowException::what(void) const throw()
 
 void					Form::checkExec(int grade) const
 {
-	if (grade < this->_execGrade)
-        throw Form::GradeTooLowException();
+	if (grade > this->_execGrade)
+		throw Form::GradeTooLowException();
 
-//    if (!this->_isSigned)
-//		throw std::invalid_argument("FormNotSigned"); //TODO: find the linux include...
+	if (!this->_isSigned)
+		throw std::invalid_argument("FormNotSigned"); //TODO: find the linux include...
 }
 
 void					Form::beSigned(Bureaucrat const &copy)
 {
-	if (this->_signGrade > copy.getGrade())
+	if (this->_signGrade < copy.getGrade())
 		throw Form::GradeTooLowException();
 
+	if (this->_isSigned)
+		throw std::invalid_argument("FormAlreadySigned");
+    
 	this->_isSigned = true;
 }
 

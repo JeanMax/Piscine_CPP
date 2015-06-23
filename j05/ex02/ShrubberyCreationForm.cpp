@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:21:26 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 22:31:59 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:54:49 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,14 +16,14 @@
 ** constructor
 */
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
-	Form("ShrubberyCreationForm", 25, 5),
+	Form("ShrubberyCreationForm", 145, 137),
 	_target(target)
 {
 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : 
-	Form("ShrubberyCreationForm", 25, 5)
+	Form("ShrubberyCreationForm", 145, 137)
 {
 	*this = copy;
 }

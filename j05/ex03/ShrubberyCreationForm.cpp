@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:21:26 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 17:38:52 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:54:49 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,14 +16,14 @@
 ** constructor
 */
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
-	Form("ShrubberyCreationForm", 25, 5),
+	Form("ShrubberyCreationForm", 145, 137),
 	_target(target)
 {
 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : 
-	Form("ShrubberyCreationForm", 25, 5)
+	Form("ShrubberyCreationForm", 145, 137)
 {
 	*this = copy;
 }
@@ -62,5 +62,6 @@ void					ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         return ;
     }
 	
-	wStream << "This is a tiny ascii tree with two branches : T" << std::endl;
+	wStream << "This is a tiny ascii tree with two branches : Y" << std::endl
+            << "Proof I'm not so lazzy, here another one : T" << std::endl;
 }

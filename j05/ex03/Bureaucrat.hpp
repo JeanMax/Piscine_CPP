@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 17:35:54 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:13:18 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,7 +16,7 @@
 ** defines
 */
 # define BUREAUCRAT_HPP
-# define DEBUG 1
+# define DEBUG 0
 
 /*
 ** includes
@@ -49,7 +49,7 @@ class Bureaucrat
 		std::string const	&getName(void) const;
 		int					getGrade(void) const;
 		void				setGrade(int grade);
-		void				signForm(Form const &form) const;
+		void				signForm(Form &form) const;
 		void				executeForm(Form const &form) const;
 
 		/*

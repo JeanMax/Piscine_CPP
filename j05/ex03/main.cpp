@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:27:25 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 22:40:00 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:52:55 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 #include <ctime>
 
 int		main(void)
@@ -154,5 +155,22 @@ int		main(void)
     b1.executeForm(f2);
     b1.executeForm(f3);
     
-	return (0);
+
+
+    std::cout << std::endl << "PART 03" << std::endl;
+	// -------------------	PART 03	------------------------------ //
+    Intern  someRandomIntern;
+    Form*   rrf1;
+    Form*   rrf2;
+    Form*   rrf3;
+    
+    rrf1 = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf2 = someRandomIntern.makeForm("presidential pardon", "Bender");
+    rrf3 = someRandomIntern.makeForm("shrubbery creation", "Bender");
+
+	std::cout << *rrf1;
+	std::cout << *rrf2;
+	std::cout << *rrf3;    
+    
+    return (0);
 }
