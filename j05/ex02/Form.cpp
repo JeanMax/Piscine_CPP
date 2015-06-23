@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 22:16:10 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:38:53 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -131,7 +131,7 @@ const char				*Form::GradeTooLowException::what(void) const throw()
 
 void					Form::checkExec(int grade) const
 {
-	if (grade < this->_execGrade)
+	if (grade > this->_execGrade)
 		throw Form::GradeTooLowException();
 
 	if (!this->_isSigned)
@@ -140,7 +140,7 @@ void					Form::checkExec(int grade) const
 
 void					Form::beSigned(Bureaucrat const &copy)
 {
-	if (this->_signGrade > copy.getGrade())
+	if (this->_signGrade < copy.getGrade())
 		throw Form::GradeTooLowException();
 
 	if (this->_isSigned)

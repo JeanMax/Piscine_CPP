@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:27:25 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 22:22:08 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:40:00 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,9 +15,11 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include <ctime>
 
 int		main(void)
 {
+    srand(static_cast<unsigned int>(time(NULL)));
 	std::cout << "PART 00" << std::endl;
 	// -------------------	PART 00	------------------------------ //
 	Bureaucrat b1("b1", 5);
@@ -105,6 +107,26 @@ int		main(void)
 
 	try
 	{
+		b1.signForm(f3);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	std::cout << f3;
+
+	try
+	{
+		b2.signForm(f3);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	std::cout << f3;
+
+	try
+	{
 		b2.signForm(f2);
 	}
 	catch (std::exception &e)
@@ -114,5 +136,23 @@ int		main(void)
 	std::cout << f2;
 
 
+    try
+    {
+        b2.executeForm(f1);
+        b2.executeForm(f2);
+        b2.executeForm(f3);
+    }
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	std::cout << f1;
+	std::cout << f2;
+	std::cout << f3;
+
+    b1.executeForm(f1);
+    b1.executeForm(f2);
+    b1.executeForm(f3);
+    
 	return (0);
 }

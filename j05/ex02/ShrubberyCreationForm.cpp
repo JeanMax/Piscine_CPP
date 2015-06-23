@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:21:26 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 22:26:46 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:31:59 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -63,5 +63,5 @@ void					ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     }
 	
 	wStream << "This is a tiny ascii tree with two branches : Y" << std::endl
-            << "Proof I'm not so lazzy, here another one : T;
+            << "Proof I'm not so lazzy, here another one : T" << std::endl;
 }
