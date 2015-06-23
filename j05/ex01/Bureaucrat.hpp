@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 15:48:54 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:06:37 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,7 +16,7 @@
 ** defines
 */
 # define BUREAUCRAT_HPP
-# define DEBUG 1
+# define DEBUG 0
 
 /*
 ** includes
@@ -38,7 +38,7 @@ class Bureaucrat
 	public:
 		Bureaucrat(std::string const &name = "NamelessBureaucrat",
 				   int grade = 150);
-		Bureaucrat(Bureaucrat const &copy);
+		Bureaucrat(Bureaucrat  const &copy);
 		~Bureaucrat(void);
 		Bureaucrat			&operator=(Bureaucrat const &copy);
 
@@ -47,7 +47,7 @@ class Bureaucrat
 		std::string const	&getName(void) const;
 		int					getGrade(void) const;
 		void				setGrade(int grade);
-		void				signForm(Form const &copy) const;
+		void				signForm(Form &copy) const;
 
 		/*
 		** nested class

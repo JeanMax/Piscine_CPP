@@ -1,41 +1,39 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Peon.hpp                                           :+:      :+:    :+:   //
+//   Enemy.class.hpp                                    :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
-//   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
+//   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2015/06/17 23:49:21 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/21 00:29:58 by mcanal           ###   ########.fr       //
+//   Created: 2015/06/20 18:22:26 by mcanal            #+#    #+#             //
+//   Updated: 2015/06/21 14:27:43 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef PEON_HPP
+#ifndef ENEMY_CLASS_HPP
 
 /*
 ** defines
 */
-# define PEON_HPP
+# define ENEMY_CLASS_HPP
 
 /*
 ** includes
 */
-# include "Victim.hpp"
+# include "AUnit.class.hpp"
 
 /*
 ** class
 */
-class Peon : public Victim
+class Enemy : public AUnit
 {
 	public:
-		Peon(std::string name = "bob");
-		Peon(Peon const &copy);
-		~Peon(void);
+		Enemy(char img = 'E');
+		Enemy(Enemy const &copy);
+		virtual ~Enemy(void);
+		virtual Enemy	&operator=(Enemy const &copy);
 
-		void			getPolymorphed(void) const;
-
-	protected:
-
+		virtual void	move(char direction = LEFT);
 };
 
-#endif //PEON_HPP
+#endif //ENEMY_CLASS_HPP

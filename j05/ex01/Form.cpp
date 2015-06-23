@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 16:10:13 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:05:12 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -133,6 +133,9 @@ void					Form::beSigned(Bureaucrat const &copy)
 {
 	if (this->_signGrade > copy.getGrade())
 		throw Form::GradeTooLowException();
+
+    if (this->_isSigned)
+        throw std::invalid_argument("FormAlreadySigned");
 
 	this->_isSigned = true;
 }

@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 15:47:26 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:07:31 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -127,14 +127,18 @@ const char				*Bureaucrat::GradeTooLowException::what(void) const throw()
 	return "GradeTooLowException";
 }
 
-void					Bureaucrat::signForm(Form const &copy) const
+void					Bureaucrat::signForm(Form &copy) const
 {
-	if (copy.getIsSigned())
-		std::cout << this->_name << " signs " << copy.getName() << std::endl;
-	else
+    try
+    {
+        copy.beSigned(*this);
+        std::cout << this->_name << " signs " << copy.getName() << std::endl;    
+    }
+    catch (std::exception &e)
+    {
 		std::cout << this->_name << " cannot sign " << copy.getName() 
-				  << " because the required grade is "<< copy.getSignGrade()
-				  << std::endl;
+				  << " because: "<< e.what() << std::endl;
+    }
 }
 
 /*

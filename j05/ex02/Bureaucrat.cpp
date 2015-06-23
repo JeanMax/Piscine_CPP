@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/23 16:35:02 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 22:21:57 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -127,14 +127,18 @@ const char				*Bureaucrat::GradeTooLowException::what(void) const throw()
 	return "GradeTooLowException";
 }
 
-void					Bureaucrat::signForm(Form const &form) const
+void					Bureaucrat::signForm(Form &form) const
 {
-	if (form.getIsSigned())
+	try
+	{
+		form.beSigned(*this);
 		std::cout << this->_name << " signs " << form.getName() << std::endl;
-	else
+	}
+	catch (std::exception &e)
+	{
 		std::cout << this->_name << " cannot sign " << form.getName()
-					<< " because the required grade is "<< form.getSignGrade()
-					<< std::endl;
+					<< " because: "<< e.what() << std::endl;
+	}
 }
 
 void					Bureaucrat::executeForm(Form const &form) const
@@ -146,8 +150,8 @@ void					Bureaucrat::executeForm(Form const &form) const
 	}
 	catch (std::exception &e)
 	{
-		std::cerr << this->_name << " failed executing " 
-				  << form.getName() << ": " << e.what() << std::endl;
+		std::cerr << this->_name << " failed executing "
+					<< form.getName() << ": " << e.what() << std::endl;
 	}
 
 }

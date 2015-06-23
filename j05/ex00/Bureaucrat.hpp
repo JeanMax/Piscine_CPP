@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/22 05:14:30 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/22 17:10:37 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/23 21:43:16 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,7 +16,7 @@
 ** defines
 */
 # define BUREAUCRAT_HPP
-# define DEBUG 1
+# define DEBUG 0
 
 /*
 ** includes
