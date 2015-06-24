@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/23 18:19:52 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/24 05:07:33 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 07:50:21 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -22,6 +22,9 @@ int				main(const int ac, const char **av)
 	}
 
 	Var		var(*(av + 1));
+	
+	std::cout.precision(1);
+	std::cout << std::fixed;
 
 	if (var.type == ERROR)
 	{
@@ -50,7 +53,7 @@ int				main(const int ac, const char **av)
 	try
 	{
 		std::cout << "float: " << var.toFloat() << "f" << std::endl;
-	} //TODO : print x.0f
+	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
@@ -63,7 +66,7 @@ int				main(const int ac, const char **av)
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
-	} //TODO : print x.0
+	}
 
 	return 0;
 }

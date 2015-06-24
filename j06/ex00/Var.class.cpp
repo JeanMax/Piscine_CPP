@@ -6,7 +6,7 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/24 02:23:44 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/24 05:06:22 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 07:52:50 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -91,13 +91,11 @@ char					Var::guessType(std::string const &s) const
 */
 char					Var::toChar(void) const
 {
-	if (this->_s == "-inff" || this->_s == "+inff" || this->_s == "nanf" ||
-		this->_s == "-inf" || this->_s == "+inf" || this->_s == "nan")
-		throw std::invalid_argument(("\b" + this->_s).c_str());
-
 	char c = static_cast<char>(atoi(this->_s.c_str()));
 
-	if (atol(this->_s.c_str()) > 127 || atol(this->_s.c_str()) < -128)
+	if (this->_s == "-inff" || this->_s == "+inff" || this->_s == "nanf" ||
+		this->_s == "-inf" || this->_s == "+inf" || this->_s == "nan" ||
+		atol(this->_s.c_str()) > 127 || atol(this->_s.c_str()) < -128)
 		throw std::invalid_argument("\bimpossible");
 	else if (c > 126 || c < 32)
 		throw std::invalid_argument("\bNon displayable");
@@ -109,7 +107,7 @@ int						Var::toInt(void) const
 {
 	if (this->_s == "-inff" || this->_s == "+inff" || this->_s == "nanf" ||
 		this->_s == "-inf" || this->_s == "+inf" || this->_s == "nan")
-		throw std::invalid_argument(this->_s.c_str());
+		throw std::invalid_argument("impossible");
 		
 	if (atol(this->_s.c_str()) > INT_MAX || atol(this->_s.c_str()) < INT_MIN)
 			throw std::invalid_argument("impossible");
