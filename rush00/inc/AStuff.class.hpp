@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/20 18:21:44 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/21 22:14:13 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 01:03:55 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -23,16 +23,16 @@
 # define NB_OBSTACLE 16 //TODO: edit value
 # define NB_MISSILE 16 //TODO: edit value
 
-# define WIDTH 50 //Edit
-# define HEIGHT 50 //Edit
+# define WIDTH 70 //Edit
+# define HEIGHT 35 //Edit
 
 # define FRAME 100 //miliseconds
 
-# define LEFT 'a'
+# define LEFT 'q'
 # define RIGHT 'd'
-# define UP 'w'
+# define UP 'z'
 # define DOWN 's'
-# define SHOOT ' ' //this need to be 0!
+# define SHOOT ' '
 
 /*
 ** includes

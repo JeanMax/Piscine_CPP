@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/20 18:25:40 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/21 20:25:11 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 01:09:59 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -80,7 +80,7 @@ void					AUnit::move(char direction)
 	switch (direction)
 	{
 	case RIGHT:
-		if (this->_x + 1 < HEIGHT)
+		if (this->_x + 1 < WIDTH)
 			this->_x++;
 		else
 			this->_alive = false;
@@ -92,7 +92,7 @@ void					AUnit::move(char direction)
 			this->_alive = false;
 		break;
 	case DOWN:
-		if (this->_y + 1 < WIDTH)
+		if (this->_y + 1 < HEIGHT)
 			this->_y++;
 		else
 			this->_alive = false;

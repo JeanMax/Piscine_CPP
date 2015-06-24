@@ -6,13 +6,13 @@
 #    By: mcanal <zboub@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/03 17:48:18 by mcanal            #+#    #+#              #
-#    Updated: 2015/06/23 18:19:46 by mcanal           ###   ########.fr        #
+#    Updated: 2015/06/24 02:33:36 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME =	convert
-C_SRC =	main.cpp
-INC =  	
+C_SRC =	main.cpp Var.class.cpp
+INC =  	Var.class.hpp
 I_DIR = -I.
 O_DIR =	obj
 VPATH =	.

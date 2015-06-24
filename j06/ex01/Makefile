@@ -6,11 +6,11 @@
 #    By: mcanal <zboub@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/03 17:48:18 by mcanal            #+#    #+#              #
-#    Updated: 2015/06/23 18:19:46 by mcanal           ###   ########.fr        #
+#    Updated: 2015/06/24 06:35:07 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME =	convert
+NAME =	serialize
 C_SRC =	main.cpp
 INC =  	
 I_DIR = -I.

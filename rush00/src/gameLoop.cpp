@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/20 19:31:46 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/21 22:42:54 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 01:08:09 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -40,14 +40,18 @@ static void		 randomPop(Obstacle **o, Enemy **e)
 
 static void drawBorder(void)
 {
-    mvprintw(0, 0, "+------------------------------------------------+");
+	int i;
 
-    for (int i = 0; i < HEIGHT; i++)
-        mvprintw(i, 0, "|");
-    for (int i = 0; i < HEIGHT; i++)
-        mvprintw(i, WIDTH, "|");
-    
-    mvprintw(HEIGHT - 1, 0, "+------------------------------------------------+");
+    mvprintw(0, 0, "+");
+    mvprintw(0, WIDTH, "+");
+    mvprintw(HEIGHT, 0, "+");
+    mvprintw(HEIGHT, WIDTH, "+");
+
+    for (i = 1; i < WIDTH; i++)
+		mvprintw(0, i, "-"), mvprintw(HEIGHT, i, "-");
+
+    for (i = 0; i < HEIGHT; i++)
+        mvprintw(i, 0, "|"), mvprintw(i, WIDTH, "|");
 }
 
 void		gameLoop(void)

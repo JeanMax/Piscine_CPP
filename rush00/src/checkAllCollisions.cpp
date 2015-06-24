@@ -6,7 +6,7 @@
 //   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/20 19:30:33 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/21 21:57:33 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 01:13:57 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -100,7 +100,7 @@ bool checkAllCollisions(Obstacle **o, Enemy	**e, Player *p)
 					Missile	**e_miss = e[j]->getMiss();
 					for (int k = 0; k < NB_MISSILE; k++) //Each enemy's missile
 					{
-						if (e_miss[k]->getAlive() && (o[i]->getX() == e_miss[k]->getX()) && (o[i]->getY() == e_miss[k]->getY())) // Each missils with each obstacle
+						if (e_miss[k]->getAlive() && o[j]->getAlive() && (o[i]->getX() == e_miss[k]->getX()) && (o[i]->getY() == e_miss[k]->getY())) // Each missils with each obstacle
 						{
 							o[i]->setAlive(false);
 							e_miss[k]->setAlive(false);
