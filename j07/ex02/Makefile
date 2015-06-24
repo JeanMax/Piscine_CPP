@@ -6,13 +6,13 @@
 #    By: mcanal <zboub@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/03 17:48:18 by mcanal            #+#    #+#              #
-#    Updated: 2015/06/24 19:07:57 by mcanal           ###   ########.fr        #
+#    Updated: 2015/06/24 20:02:44 by mcanal           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME =	array
-C_SRC =	Array.cpp main.cpp
-INC =  	
+C_SRC =	main.cpp
+INC =  	Array.template.hpp
 I_DIR = -I.
 O_DIR =	obj
 VPATH =	.

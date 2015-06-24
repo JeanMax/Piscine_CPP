@@ -6,11 +6,11 @@
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/24 19:08:03 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/24 19:24:08 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 20:02:37 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Array.cpp" // oO
+#include "Array.template.hpp"
 #include <iostream>
 
 int		main(void)

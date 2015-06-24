@@ -1,18 +1,32 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Array.cpp                                          :+:      :+:    :+:   //
+//   Array.template.tpp                                 :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2015/06/24 18:42:01 by mcanal            #+#    #+#             //
-//   Updated: 2015/06/24 19:25:11 by mcanal           ###   ########.fr       //
+//   Updated: 2015/06/24 20:03:24 by mcanal           ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
+#ifndef ARRAY_TEMPLATE_HPP
+
+/*
+** defines
+*/
+# define ARRAY_TEMPLATE_HPP
+
+
+/*
+** includes
+*/
 #include <stdexcept>
 #include <iostream>
 
+/*
+** class
+*/
 template <typename T>
 class Array
 {
@@ -74,3 +88,5 @@ class Array
 			return this->_len;
 		}
 };
+
+#endif //ARRAY_TEMPLATE_HPP 
